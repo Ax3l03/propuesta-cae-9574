@@ -1,5 +1,6 @@
 <title>Propuesta San Andrés Vera</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--morado:#3a2666;--azul:#223779;--prim:#006799;--naranja:#ff4c02;--rosa:#e5007e;--verde:#009967;--rojo:#ca2e55;--tabla:#f0f1fa;--tinta:#1c1f2b;--gris:#667085;--borde:#e4e7ef;--suave:#f6f7fb;--salmon:#ffb199}
@@ -9,8 +10,8 @@ p{margin:0}
 #progreso{position:fixed;top:0;left:0;height:4px;width:0;background:var(--rosa);z-index:50}
 
 /* ── bloque 1: la escena ── */
-.escena{height:360vh;background:linear-gradient(90deg,var(--morado),var(--azul));color:#fff}
-.escena .pegado{position:sticky;top:0;height:100vh;overflow:hidden}
+.escena{height:360vh;height:360svh;background:linear-gradient(90deg,var(--morado),var(--azul));color:#fff}
+.escena .pegado{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .marca{position:absolute;top:18px;left:24px;right:24px;font-size:13px;color:rgba(255,255,255,.7);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .cont{height:100%;max-width:1160px;margin:0 auto;padding:60px 24px 40px;display:grid;grid-template-columns:1fr 1.15fr;align-items:center;gap:40px}
 .texto{display:flex;flex-direction:column;gap:26px}
@@ -37,24 +38,25 @@ p{margin:0}
 .maquetas{position:relative;height:min(560px,72vh)}
 .parte{opacity:0;transform:translateY(16px) scale(.98);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
 .parte.on{opacity:1;transform:none}
-.portatil{position:absolute;left:0;top:8%;width:82%;background:#fff;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.35);overflow:hidden;color:var(--tinta);font-size:11px}
+.grupo-pc{position:absolute;left:0;top:8%;width:76%}
+.portatil{position:relative;width:100%;background:#fff;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.35);overflow:hidden;color:var(--tinta);font-size:11px}
 .pc-cab{height:36px;background:linear-gradient(90deg,var(--morado),var(--azul));color:#fff;display:flex;align-items:center;gap:10px;padding:0 14px;font-weight:700;font-size:12px;letter-spacing:.02em;transition:background .6s}
-.pc-cab .flor{width:18px;height:18px;border-radius:50%;border:2px solid #fff;display:inline-block}
+.pc-cab .flor{width:18px;height:18px;border-radius:50%;border:2px solid #fff;display:inline-block;flex:none}
 .pc-cab .nombre{position:relative}
 .pc-cab .nombre .a,.pc-cab .nombre .b{transition:opacity .4s}
 .pc-cab .nombre .b{position:absolute;left:0;top:0;white-space:nowrap;opacity:0}
 .escena.c4 .pc-cab{background:linear-gradient(90deg,#0b4f4c,#118f7d)}
 .escena.c4 .pc-cab .nombre .a{opacity:0}.escena.c4 .pc-cab .nombre .b{opacity:1}
-.pc-cab .campana{margin-left:auto;width:14px;height:14px;border-radius:50%;border:2px solid #fff;position:relative}
+.pc-cab .campana{margin-left:auto;width:14px;height:14px;border-radius:50%;border:2px solid #fff;position:relative;flex:none}
 .pc-cab .campana::after{content:"3";position:absolute;top:-8px;right:-9px;background:var(--rojo);border-radius:50%;width:14px;height:14px;font-size:9px;display:grid;place-items:center}
 .pc-cuerpo{display:grid;grid-template-columns:36px 1fr;background:#f4f4f5;min-height:300px}
 .pc-lateral{background:#fff;padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:14px}
 .pc-lateral i{width:14px;height:14px;border-radius:3px;border:1.5px solid #9aa0b4}
 .pc-lateral i:first-child{border-color:var(--rosa);border-radius:50%}
-.pc-main{padding:12px}
+.pc-main{padding:12px;min-width:0}
 .pc-titulo{font-size:14px;font-weight:600;margin-bottom:10px}
 .pc-rej{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
-.pc-card{background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,.08);transition:opacity .5s,transform .5s,max-height .5s}
+.pc-card{background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,.08);transition:opacity .5s,transform .5s;min-width:0}
 .pc-card b{display:block;font-size:11px;margin-bottom:8px}
 .pc-card .barra{display:block;height:6px;border-radius:3px;background:#e6e6ea;margin:6px 0;overflow:hidden}
 .pc-card .barra i{display:block;height:100%;background:#f5a623;border-radius:3px}
@@ -66,25 +68,35 @@ p{margin:0}
 .pc-card th{background:var(--tabla);text-align:left;font-weight:600;padding:4px 5px;white-space:nowrap}
 .pc-card td{padding:4px 5px;border-bottom:1px solid #eee;white-space:nowrap}
 .pc-card .col-obra{max-width:0;padding-left:0;padding-right:0;overflow:hidden;opacity:0;transition:max-width .6s,padding .6s,opacity .4s}
-.escena.c2 .pc-card .col-obra{max-width:120px;padding:5px 6px;opacity:1}
+.escena.c2 .pc-card .col-obra{max-width:120px;padding:4px 5px;opacity:1}
 .pc-card .ok{color:var(--verde)}.pc-card .mal{color:var(--rojo)}.pc-card .aviso{color:#b7791f}
 .escena.c3 #card-precal{opacity:0;transform:scale(.9);position:absolute;left:0;top:0;width:48%;pointer-events:none}
 .escena.c3 #card-doc{grid-column:1/-1}
-.telefono{position:absolute;right:0;bottom:0;width:31%;max-width:210px;aspect-ratio:9/19;border-radius:26px;background:#111;padding:8px;box-shadow:0 30px 70px rgba(0,0,0,.45);color:var(--tinta)}
+
+.telefono{position:absolute;right:-2%;bottom:0;width:29%;max-width:200px;aspect-ratio:9/19;border-radius:26px;background:#111;padding:8px;box-shadow:0 30px 70px rgba(0,0,0,.45);color:var(--tinta)}
 .telefono .pant{background:#f4f4f5;border-radius:19px;height:100%;overflow:hidden;position:relative;font-size:10px}
-.tel-cab{height:34px;background:linear-gradient(90deg,var(--morado),var(--azul));color:#fff;display:flex;align-items:center;padding:0 12px;font-weight:700;font-size:10px;transition:background .6s}
+.tel-cab{height:34px;background:linear-gradient(90deg,var(--morado),var(--azul));color:#fff;display:flex;align-items:center;padding:0 12px;font-weight:700;font-size:10px;transition:background .6s;position:relative}
+.tel-cab .a,.tel-cab .b{transition:opacity .4s}
+.tel-cab .b{position:absolute;left:12px;top:50%;transform:translateY(-50%);white-space:nowrap;opacity:0}
 .escena.c4 .tel-cab{background:linear-gradient(90deg,#0b4f4c,#118f7d)}
-.tel-lista{padding:10px}
+.escena.c4 .tel-cab .a{opacity:0}.escena.c4 .tel-cab .b{opacity:1}
+.tel-lista{padding:10px;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.escena.c1 .tel-lista{transform:translateY(64px)}
 .tel-lista h4{margin:0 0 8px;font-size:11px;font-weight:600}
-.tel-lista .fila{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:6px;padding:6px 8px;margin-bottom:6px;box-shadow:0 1px 2px rgba(0,0,0,.06)}
-.tel-lista .fila b{font-size:11px}
+.tel-lista .fila{display:flex;justify-content:space-between;align-items:center;gap:6px;background:#fff;border-radius:6px;padding:6px 8px;margin-bottom:6px;box-shadow:0 1px 2px rgba(0,0,0,.06);overflow:hidden;transition:opacity .45s,max-height .45s,margin .45s,padding .45s}
+.tel-lista .fila b{font-size:11px;white-space:nowrap}
 .tel-lista .fila.r b{color:var(--rojo)}.tel-lista .fila.n b{color:#b7791f}.tel-lista .fila.v b{color:var(--verde)}
+.tel-lista .obra{display:block;font-size:9px;color:var(--gris);max-height:0;opacity:0;overflow:hidden;transition:max-height .5s,opacity .4s,margin .5s}
+.escena.c2 .tel-lista .obra{max-height:18px;opacity:1;margin-top:2px}
+.escena.c3 .tel-lista .fila.sobra{opacity:0;max-height:0;margin-bottom:0;padding-top:0;padding-bottom:0}
 .burbuja{position:absolute;left:8px;right:8px;top:44px;background:#1c1f2b;color:#fff;border-radius:10px;padding:8px 10px;font-size:10px;line-height:1.3;box-shadow:0 10px 30px rgba(0,0,0,.3);opacity:0;transform:translateY(-14px);transition:opacity .4s,transform .4s}
 .burbuja b{display:block;font-size:9px;color:#7ef0c5;margin-bottom:2px}
 .escena.c1 .burbuja{opacity:1;transform:none}
-.listo{position:absolute;left:0;top:-14px;background:var(--verde);color:#fff;font-weight:700;font-size:13px;padding:8px 14px;border-radius:999px;box-shadow:0 10px 30px rgba(0,153,103,.4)}
-.cambios{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-.cambio{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 14px 8px 8px;font-size:13px;font-weight:600;color:#fff;opacity:0;transform:translateX(-18px);transition:opacity .4s,transform .4s}
+
+.listo{position:absolute;left:0;top:calc(8% - 44px);background:var(--verde);color:#fff;font-weight:700;font-size:13px;padding:8px 14px;border-radius:999px;box-shadow:0 10px 30px rgba(0,153,103,.4);white-space:nowrap}
+.cambios{display:flex;flex-direction:column;align-items:flex-start;gap:8px;max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.2,.7,.2,1)}
+.escena.f2 .cambios{max-height:240px}
+.cambio{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 14px 8px 8px;font-size:13px;font-weight:600;color:#fff;opacity:0;transform:scale(.96);transition:opacity .4s,transform .4s}
 .cambio.on{opacity:1;transform:none}
 .cambio i{width:22px;height:22px;border-radius:50%;background:#7ef0c5;color:#0b4f4c;display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:800;flex:none}
 
@@ -110,37 +122,102 @@ p{margin:0}
 .mismo .eti{color:var(--gris);margin-right:4px}
 .mismo span:not(.eti){background:var(--suave);border:1px solid var(--borde);border-radius:999px;padding:8px 14px;font-weight:600}
 .cta{margin-top:70px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--naranja);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:16px 26px;border-radius:999px;box-shadow:0 10px 30px rgba(255,76,2,.35);transition:transform .2s,box-shadow .2s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--naranja);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:16px 26px;border-radius:999px;box-shadow:0 10px 30px rgba(255,76,2,.35);transition:transform .2s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(255,76,2,.45)}
-.btn svg{width:18px;height:18px}
+.btn svg{width:18px;height:18px;flex:none}
 .firma{margin-top:40px;font-size:14px;color:var(--gris)}
 .firma b{color:var(--tinta);font-size:16px;margin-right:10px}
 
-@media (max-width:900px){
-  .marca{font-size:12px}
-  .marca span:last-child{display:none}
-  .cont{display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:14px;padding:52px 18px 26px}
-  .texto{gap:14px}
-  .grande{font-size:clamp(34px,10vw,56px)}
-  .sub{font-size:15px;margin-top:10px}
-  .contador b{font-size:40px}
-  .cambios{flex-direction:row;flex-wrap:wrap;gap:6px}
-  .cambio{font-size:11px;padding:5px 10px 5px 5px;gap:6px}
-  .cambio i{width:18px;height:18px;font-size:11px}
-  .maquetas{height:min(38vh,330px);flex:none}
-  .portatil{width:78%;top:6%;font-size:9px}
-  .pc-cuerpo{min-height:200px}
-  .pc-rej{gap:6px}
-  .telefono{width:34%;max-width:130px;border-radius:18px;padding:5px}
-  .telefono .pant{border-radius:14px}
-  .tel-lista{padding:6px}.tel-lista .fila{padding:4px 6px;margin-bottom:4px;font-size:8px}
-  .burbuja{top:36px;font-size:8px;padding:6px 8px}
-  .listo{font-size:11px;padding:6px 10px}
-  .tarjetas{grid-template-columns:1fr}
-  .precios{padding:70px 0 60px}
+/* ── pantallas medianas: menos solape entre maquetas ── */
+@media (max-width:1000px){
+  .cont{gap:26px}
+  .grupo-pc{width:74%}
+  .telefono{width:28%;right:-3%}
 }
+
+/* ── móvil y tableta en vertical: el teléfono es el protagonista ── */
+@media (max-width:820px){
+  .marca{top:14px;left:16px;right:16px;font-size:12px}
+  .marca span:last-child{display:none}
+  .cont{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:13px;padding:42px 16px 14px}
+  .texto{gap:11px;flex:none}
+  .grande{font-size:clamp(31px,8.6vw,46px);line-height:1.03}
+  .sub{font-size:clamp(15px,4vw,17px);margin-top:9px;max-width:none}
+  .contador{gap:10px;font-size:14px}
+  .contador b{font-size:clamp(36px,9vw,44px)}
+  .tiras{height:8px;gap:6px}
+
+  /* una pastilla cada vez, en el mismo hueco */
+  .cambios{display:grid;gap:0}
+  .escena.f2 .cambios{max-height:64px}
+  .cambio{grid-area:1/1;font-size:clamp(12px,3.4vw,14px);padding:7px 13px 7px 7px;gap:8px;align-self:start}
+  .cambio i{width:20px;height:20px;font-size:12px}
+  .cambio.on{opacity:0;transform:scale(.96)}
+  .cambio.actual{opacity:1;transform:none}
+
+  /* fuera la maqueta de ordenador: aquí no se lee */
+  .grupo-pc{display:none}
+  .maquetas{flex:1;min-height:190px;height:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:14px}
+  .listo{position:static;align-self:center;margin-bottom:9px;font-size:12.5px;padding:7px 14px}
+
+  .telefono{position:relative;right:auto;bottom:auto;opacity:1;transform:none;
+    height:min(470px, calc(100% - 46px));width:auto;aspect-ratio:9/19;max-width:none;
+    border-radius:24px;padding:7px;box-shadow:0 20px 44px rgba(0,0,0,.45)}
+  .telefono .pant{border-radius:18px;font-size:10px}
+  .tel-cab{height:32px;padding:0 11px;font-size:10px}
+  .tel-cab .b{left:11px}
+  .tel-lista{padding:9px}
+  .tel-lista h4{font-size:10.5px;margin-bottom:7px}
+  .tel-lista .fila{padding:6px 8px;margin-bottom:5px}
+  .tel-lista .fila b{font-size:10.5px}
+  .tel-lista .obra{font-size:9px}
+  .burbuja{left:6px;right:6px;top:38px;font-size:10px;padding:8px 9px;border-radius:9px}
+  .burbuja b{font-size:8.5px}
+
+  .cue{bottom:4px;font-size:11px;gap:3px}
+  .cue span{height:18px}
+  .escena.c1 .cue{opacity:0}
+
+  .precios{padding:60px 0 54px}
+  .ancho{padding:0 18px}
+  .titulo{font-size:clamp(25px,6.6vw,38px);line-height:1.08}
+  .tarjetas{grid-template-columns:1fr;gap:16px;margin-top:30px}
+  .tarjeta{padding:26px 20px 22px}
+  .tarjeta .p{font-size:42px}
+  .tarjeta .p small{font-size:14px}
+  .tarjeta .luego{font-size:14.5px;margin-top:14px}
+  .mismo{margin-top:26px;font-size:14px;gap:8px}
+  .mismo span:not(.eti){padding:7px 12px}
+  .mismo .eti{width:100%;margin:0 0 2px}
+  .cta{margin-top:44px;gap:18px}
+  .btn{width:100%;font-size:15.5px;padding:15px 20px}
+  .firma{margin-top:26px;font-size:13px}
+  .firma b{display:block;margin:0 0 3px}
+}
+
+/* ── tableta en vertical: caben dos columnas de tarjetas ── */
+@media (min-width:600px) and (max-width:820px){
+  .telefono{height:min(580px, calc(100% - 52px))}
+  .listo{font-size:14px;padding:9px 16px;margin-bottom:12px}
+  .tarjetas{grid-template-columns:1fr 1fr}
+  .tarjeta.top{grid-column:1/-1}
+  .btn{width:auto}
+  .cta{justify-content:flex-start;gap:28px}
+}
+
+/* ── móvil con pantalla corta ── */
+@media (max-width:820px) and (max-height:700px){
+  .cont{gap:10px;padding:38px 16px 12px}
+  .grande{font-size:28px}
+  .sub{font-size:13.5px;margin-top:7px}
+  .contador b{font-size:30px}
+  .cambio{font-size:11.5px}
+  .maquetas{min-height:170px;padding-bottom:10px}
+  .listo{font-size:11.5px;padding:6px 12px;margin-bottom:7px}
+}
+
 @media (prefers-reduced-motion:reduce){
-  .rev,.parte,.fase,.cambio{transition:none}
+  .rev,.parte,.fase,.cambio,.cambios,.tel-lista{transition:none}
   .cue span{animation:none}
 }
 </style>
@@ -167,37 +244,41 @@ p{margin:0}
       </div>
 
       <div class="maquetas">
-        <div class="portatil parte" data-p=".03">
-          <div class="pc-cab"><span class="flor"></span><span class="nombre"><span class="a">CONTROL CAE</span><span class="b">SAN ANDRÉS VERA</span></span><span class="campana"></span></div>
-          <div class="pc-cuerpo">
-            <div class="pc-lateral parte" data-p=".08"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="pc-main">
-              <div class="pc-titulo parte" data-p=".12">Mi resumen</div>
-              <div class="pc-rej">
-                <div class="pc-card parte" data-p=".17" id="card-precal"><b>Precalificación de Proveedores</b><span class="barra"><i style="width:28%"></i></span><span class="barra"><i style="width:18%"></i></span></div>
-                <div class="pc-card parte" data-p=".23" id="card-doc"><b>Mi documentación</b><div class="fila">Tus proyectos <em class="r">4</em><em class="v">0</em></div><div class="fila">Tus trabajadores <em class="r">4</em><em class="v">4</em></div><div class="fila">Tu maquinaria <em class="r">2</em><em class="v">1</em></div></div>
-                <div class="pc-card ancha parte" data-p=".30"><b>Trabajadores con vencimiento próximo</b>
-                  <table><tr><th>Apellidos, Nombre</th><th class="col-obra">Obra</th><th>Reconocimiento</th><th>EPIs</th></tr>
-                  <tr><td>Bernal Ortega, Lucía</td><td class="col-obra">Ronda Este</td><td class="aviso">! 8</td><td class="mal">✕ -1</td></tr>
-                  <tr><td>Sáez Marín, Iván</td><td class="col-obra">Variante</td><td class="mal">✕ -45</td><td class="ok">✓</td></tr></table>
+        <div class="grupo-pc">
+          <div class="portatil parte" data-p=".03">
+            <div class="pc-cab"><span class="flor"></span><span class="nombre"><span class="a">CONTROL CAE</span><span class="b">SAN ANDRÉS VERA</span></span><span class="campana"></span></div>
+            <div class="pc-cuerpo">
+              <div class="pc-lateral parte" data-p=".08"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="pc-main">
+                <div class="pc-titulo parte" data-p=".12">Mi resumen</div>
+                <div class="pc-rej">
+                  <div class="pc-card parte" data-p=".17" id="card-precal"><b>Precalificación de Proveedores</b><span class="barra"><i style="width:28%"></i></span><span class="barra"><i style="width:18%"></i></span></div>
+                  <div class="pc-card parte" data-p=".23" id="card-doc"><b>Mi documentación</b><div class="fila">Tus proyectos <em class="r">4</em><em class="v">0</em></div><div class="fila">Tus trabajadores <em class="r">4</em><em class="v">4</em></div><div class="fila">Tu maquinaria <em class="r">2</em><em class="v">1</em></div></div>
+                  <div class="pc-card ancha parte" data-p=".30"><b>Trabajadores con vencimiento próximo</b>
+                    <table><tr><th>Apellidos, Nombre</th><th class="col-obra">Obra</th><th>Reconocim.</th><th>EPIs</th></tr>
+                    <tr><td>Bernal Ortega, Lucía</td><td class="col-obra">Ronda Este</td><td class="aviso">! 8</td><td class="mal">✕ -1</td></tr>
+                    <tr><td>Sáez Marín, Iván</td><td class="col-obra">Variante</td><td class="mal">✕ -45</td><td class="ok">✓</td></tr></table>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="listo parte" data-p=".47">✓ Demo lista</div>
+
         <div class="telefono parte" data-p=".38">
           <div class="pant">
-            <div class="tel-cab">CONTROL CAE</div>
+            <div class="tel-cab"><span class="a">CONTROL CAE</span><span class="b">SAN ANDRÉS VERA</span></div>
             <div class="tel-lista"><h4>Vencimientos</h4>
-              <div class="fila r"><span>Reconocimiento · Lucía</span><b>8 d</b></div>
-              <div class="fila n"><span>PRL 20 h · Iván</span><b>11 d</b></div>
-              <div class="fila v"><span>TC2 · agosto</span><b>ok</b></div>
-              <div class="fila v"><span>Seguro RC</span><b>ok</b></div>
+              <div class="fila r"><span>Reconocim. · Lucía<small class="obra">Ronda Este</small></span><b>8 d</b></div>
+              <div class="fila n"><span>PRL 20 h · Iván<small class="obra">Variante</small></span><b>11 d</b></div>
+              <div class="fila v"><span>TC2 · agosto<small class="obra">Empresa</small></span><b>ok</b></div>
+              <div class="fila v sobra"><span>Precalificación</span><b>2/10</b></div>
             </div>
             <div class="burbuja"><b>Control CAE · ahora</b>El reconocimiento médico de Lucía caduca en 30 días.</div>
           </div>
         </div>
-        <div class="listo parte" data-p=".47">✓ Demo lista</div>
       </div>
     </div>
     <div class="cue">bajad<span></span></div>
@@ -243,7 +324,8 @@ p{margin:0}
   var f1 = document.getElementById('f1'), f2 = document.getElementById('f2');
   var num = document.getElementById('cont-num'), eti = document.getElementById('cont-eti'), de = document.getElementById('cont-de');
   var tiras = document.getElementById('tiras');
-  var partes = [].slice.call(document.querySelectorAll('.parte,.cambio'));
+  var partes = [].slice.call(document.querySelectorAll('.parte'));
+  var cambios = [].slice.call(document.querySelectorAll('.cambio'));
   var ultimo = null;
 
   function pintaTiras(n, fase){
@@ -258,8 +340,16 @@ p{margin:0}
   }
   function escenaTick(p){
     partes.forEach(function(el){ el.classList.toggle('on', p >= parseFloat(el.dataset.p)); });
+    /* en el móvil solo se ve la última pastilla: se marca aparte */
+    var actual = null;
+    cambios.forEach(function(el){ if(p >= parseFloat(el.dataset.p)) actual = el; });
+    cambios.forEach(function(el){
+      el.classList.toggle('on', p >= parseFloat(el.dataset.p));
+      el.classList.toggle('actual', el === actual);
+    });
     var fase2 = p >= .52;
     f1.classList.toggle('on', !fase2); f2.classList.toggle('on', fase2);
+    escena.classList.toggle('f2', fase2);
     escena.classList.toggle('c1', p >= .58); escena.classList.toggle('c2', p >= .68);
     escena.classList.toggle('c3', p >= .78); escena.classList.toggle('c4', p >= .88);
     escena.classList.toggle('fin', p >= .97);
@@ -269,12 +359,14 @@ p{margin:0}
   var pendiente = false;
   function tick(){
     pendiente = false;
-    var y = window.scrollY, vh = window.innerHeight, H = document.documentElement.scrollHeight - vh;
-    prog.style.width = (H>0 ? y/H*100 : 0)+'%';
-    escenaTick(rm ? 1 : clamp(y/(escena.offsetHeight - vh), 0, 1));
+    var y = window.scrollY, vh = document.documentElement.clientHeight, H = escena.offsetHeight - vh;
+    var total = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.width = (total>0 ? clamp(y/total,0,1)*100 : 0)+'%';
+    escenaTick(rm ? 1 : clamp(H>0 ? y/H : 1, 0, 1));
   }
   window.addEventListener('scroll', function(){ if(!pendiente){ pendiente = true; requestAnimationFrame(tick); } }, {passive:true});
   window.addEventListener('resize', tick);
+  window.addEventListener('orientationchange', function(){ setTimeout(tick, 250); });
   tick();
 
   /* bloque 2 */
